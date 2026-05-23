@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стихи — лента</title>
+    <link rel="stylesheet" href="../assets/css/main-style.css">
+    <link rel="stylesheet" href="../assets/css/poems-style.css">
+    
+</head>
+
+<body>
+    <div class="border">
+        <a href="home-page.html">Главная</a>
+        <a href="about.html">О проекте</a>
+        <div class="search-input">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="search" placeholder="Поиск стихов...">
+        </div>
+        <a href="login.html">Вход</a>
+        <a href="help.html">Помощь</a>
+    </div>
+
+    <main class="poems-layout">
+        <section class="poems-feed" aria-label="Лента стихов">
+            <article class="poem-post">
+                <div class="poem-votes">
+                    <button type="button" class="vote-btn" aria-label="Голос вверх">▲</button>
+                    <span class="votes-count">123</span>
+                    <button type="button" class="vote-btn" aria-label="Голос вниз">▼</button>
+                </div>
+                <div class="poem-content">
+                    <p class="poem-meta">
+                        <span class="poem-author">by username</span>
+                        <span class="poem-time">2 часа назад</span>
+                    </p>
+                    <h2 class="poem-title">Название стиха</h2>
+                    <p class="poem-body">Здесь будет текст стиха.
+                        Несколько строк подряд,
+                        чтобы выглядело как настоящий пост в ленте.</p>
+                    <div class="poem-actions">
+                        <button type="button" class="poem-action-btn">Комментарии</button>
+                        <button type="button" class="poem-action-btn">Сохранить</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="poem-post">
+                <div class="poem-votes">
+                    <button type="button" class="vote-btn" aria-label="Голос вверх">▲</button>
+                    <span class="votes-count">42</span>
+                    <button type="button" class="vote-btn" aria-label="Голос вниз">▼</button>
+                </div>
+                <div class="poem-content">
+                    <p class="poem-meta">
+                        <span class="poem-author">by другой_автор</span>
+                        <span class="poem-time">вчера</span>
+                    </p>
+                    <h2 class="poem-title">Ещё одно стихотворение</h2>
+                    <p class="poem-body">Можно вставить сюда любое стихотворение,
+                        чтобы посмотреть, как оно будет отображаться в карточке ленты.</p>
+                    <div class="poem-actions">
+                        <button type="button" class="poem-action-btn">Комментарии</button>
+                        <button type="button" class="poem-action-btn">Сохранить</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="poems-sidebar">
+            <h2>Добро пожаловать на Poetry Site</h2>
+            <p>Здесь пользователи публикуют свои стихи, голосуют за понравившиеся и оставляют комментарии — как в
+                Reddit, только для поэзии.</p>
+            <a href="create-poems.html"><button type="button" class="sidebar-create-btn">Создать новый стих</button></a>
+        </aside>
+    </main>
+
+    <footer>Сделано с любовью к поэзии • 2026</footer>
+    <div id="stars"></div>
+    <script src="../assets/js/stars.js"></script>
+</body>
+
+</html>
