@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание стихов</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <load src="/src/pages/components/header.html"></load>
+  </header>
+
+  <main class="create">
+
+    <div class="create__form">
+
+      <h1 class="create__title">Новое стихотворение</h1>
+
+      <div class="create__field">
+        <label class="create__label" for="poem-title">Название</label>
+        <input
+          class="create__input"
+          id="poem-title"
+          type="text"
+          placeholder="Введите название..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="create__field">
+        <label class="create__label" for="poem-body">Текст стихотворения</label>
+        <textarea
+          class="create__textarea"
+          id="poem-body"
+          placeholder="Введите текст стихотворения..."
+          rows="12"
+        ></textarea>
+      </div>
+
+      <div class="create__footer">
+        <a class="create__btn create__btn--ghost" href="">Отмена</a>
+        <button class="create__btn create__btn--primary" type="button" id="btn-create">
+          Создать
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">Сделано с любовью к поэзии • 2026</p>
+  </footer>
+
+
+</body>
+</html>
