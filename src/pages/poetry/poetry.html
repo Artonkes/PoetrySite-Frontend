@@ -1,87 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стихи — лента</title>
-    <link rel="stylesheet" href="../assets/css/main-style.css">
-    <link rel="stylesheet" href="../assets/css/poems-style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стихи — лента</title>
+  <link rel="stylesheet" href="../assets/css/main-style.css">
+  <link rel="stylesheet" href="../assets/css/poems-style.css">
 </head>
 
 <body>
-    <div class="border">
-        <a href="home-page.html">Главная</a>
-        <a href="about.html">О проекте</a>
-        <div class="search-input">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <input type="search" placeholder="Поиск стихов...">
+
+  <header class="header">
+    <load src="/src/pages/components/header.html"></load>
+  </header>
+
+  <main class="feed-layout">
+    <section class="feed feed-layout__feed">
+
+      <div class="feed__sort">
+        <button class="feed__sort-btn feed__sort-btn--active" data-sort="hot">🔥 Горячее</button>
+        <button class="feed__sort-btn" data-sort="new">🆕 Новое</button>
+        <button class="feed__sort-btn" data-sort="top">⬆ Топ</button>
+      </div>
+
+      <div class="feed__list" id="feed-list">
+
+        <article class="poem-card" data-id="1">
+
+          <div class="poem-card__votes">
+            <button class="poem-card__vote-btn poem-card__vote-btn--up"
+                    type="button" aria-label="Голос вверх">▲</button>
+            <span class="poem-card__vote-count">123</span>
+            <button class="poem-card__vote-btn poem-card__vote-btn--down"
+                    type="button" aria-label="Голос вниз">▼</button>
+          </div>
+
+          <div class="poem-card__body">
+            <p class="poem-card__meta">
+              <span class="poem-card__author">u/ИванИванов</span>
+              <span class="poem-card__time">2 часа назад</span>
+            </p>
+            <h2 class="poem-card__title">
+              <a class="poem-card__link" href="poem-detail.html?id=1">Весенний вечер</a>
+            </h2>
+            <p class="poem-card__text">
+              Когда закат горит как медь,<br>
+              И тихо шепчет старый сад...
+            </p>
+            <div class="poem-card__actions">
+              <button class="poem-card__action-btn" type="button">💬 34 комментария</button>
+              <button class="poem-card__action-btn" type="button">🔖 Сохранить</button>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="poem-card" data-id="2">
+
+          <div class="poem-card__votes">
+            <button class="poem-card__vote-btn poem-card__vote-btn--up"
+                    type="button" aria-label="Голос вверх">▲</button>
+            <span class="poem-card__vote-count">42</span>
+            <button class="poem-card__vote-btn poem-card__vote-btn--down"
+                    type="button" aria-label="Голос вниз">▼</button>
+          </div>
+
+          <div class="poem-card__body">
+            <p class="poem-card__meta">
+              <span class="poem-card__author">u/Поэт_42</span>
+              <span class="poem-card__time">вчера</span>
+            </p>
+            <h2 class="poem-card__title">
+              <a class="poem-card__link" href="poem-detail.html?id=2">Ночное море</a>
+            </h2>
+            <p class="poem-card__text">
+              Волна ударила о берег,<br>
+              Рассыпалась звездой в ночи...
+            </p>
+            <div class="poem-card__actions">
+              <button class="poem-card__action-btn" type="button">💬 8 комментариев</button>
+              <button class="poem-card__action-btn" type="button">🔖 Сохранить</button>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="feed__sentinel" id="feed-sentinel"></div>
+
+    </section>
+
+    <aside class="sidebar feed-layout__sidebar">
+
+      <div class="sidebar__item">
+        <div class="widget">
+          <h2 class="widget__title">Poetry Site</h2>
+          <p class="widget__text">
+            Публикуй стихи, голосуй и комментируй — как Reddit, только для поэзии.
+          </p>
+          <a class="widget__btn" href="create-poems.html">✦ Создать стих</a>
         </div>
-        <a href="login.html">Вход</a>
-        <a href="help.html">Помощь</a>
-    </div>
+      </div>
 
-    <main class="poems-layout">
-        <section class="poems-feed" aria-label="Лента стихов">
-            <article class="poem-post">
-                <div class="poem-votes">
-                    <button type="button" class="vote-btn" aria-label="Голос вверх">▲</button>
-                    <span class="votes-count">123</span>
-                    <button type="button" class="vote-btn" aria-label="Голос вниз">▼</button>
-                </div>
-                <div class="poem-content">
-                    <p class="poem-meta">
-                        <span class="poem-author">by username</span>
-                        <span class="poem-time">2 часа назад</span>
-                    </p>
-                    <h2 class="poem-title">Название стиха</h2>
-                    <p class="poem-body">Здесь будет текст стиха.
-                        Несколько строк подряд,
-                        чтобы выглядело как настоящий пост в ленте.</p>
-                    <div class="poem-actions">
-                        <button type="button" class="poem-action-btn">Комментарии</button>
-                        <button type="button" class="poem-action-btn">Сохранить</button>
-                    </div>
-                </div>
-            </article>
+    </aside>
 
-            <article class="poem-post">
-                <div class="poem-votes">
-                    <button type="button" class="vote-btn" aria-label="Голос вверх">▲</button>
-                    <span class="votes-count">42</span>
-                    <button type="button" class="vote-btn" aria-label="Голос вниз">▼</button>
-                </div>
-                <div class="poem-content">
-                    <p class="poem-meta">
-                        <span class="poem-author">by другой_автор</span>
-                        <span class="poem-time">вчера</span>
-                    </p>
-                    <h2 class="poem-title">Ещё одно стихотворение</h2>
-                    <p class="poem-body">Можно вставить сюда любое стихотворение,
-                        чтобы посмотреть, как оно будет отображаться в карточке ленты.</p>
-                    <div class="poem-actions">
-                        <button type="button" class="poem-action-btn">Комментарии</button>
-                        <button type="button" class="poem-action-btn">Сохранить</button>
-                    </div>
-                </div>
-            </article>
-        </section>
+  </main>
 
-        <aside class="poems-sidebar">
-            <h2>Добро пожаловать на Poetry Site</h2>
-            <p>Здесь пользователи публикуют свои стихи, голосуют за понравившиеся и оставляют комментарии — как в
-                Reddit, только для поэзии.</p>
-            <a href="create-poems.html"><button type="button" class="sidebar-create-btn">Создать новый стих</button></a>
-        </aside>
-    </main>
-
-    <footer>Сделано с любовью к поэзии • 2026</footer>
-    <div id="stars"></div>
-    <script src="../assets/js/stars.js"></script>
 </body>
-
 </html>
